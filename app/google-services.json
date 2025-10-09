@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "306930119388",
+    "project_id": "medication-warning-system",
+    "storage_bucket": "medication-warning-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306930119388:android:e4cbb47ce0a0fe60917a19",
+        "android_client_info": {
+          "package_name": "com.avnikahraman.denemeqrcodescanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306930119388-jjpq7g71cbr4dmar3ma78ljdpamv1b6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWxmPQgiKmYk2B-cKdCxxF2Zzitpd96rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306930119388-0s9hrlanlv6cfeh3ps40fv1t3mo11mbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
