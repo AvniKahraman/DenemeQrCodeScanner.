@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         sharedPref = getSharedPreferences("LoginPrefs", MODE_PRIVATE)
 
-        // Eğer daha önce remember me seçildiyse otomatik login
+        
         val rememberMe = sharedPref.getBoolean("rememberMe", false)
         val savedUser = auth.currentUser
         if (rememberMe && savedUser != null) {

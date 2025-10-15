@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">DenemeQrCodeScanner</string>
+    <string name="app_name">Safedose</string>
     <string name="default_web_client_id">BURAYA_CLIENT_ID_GELECEK</string>
 </resources>

@@ -7,8 +7,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
+        <!-- 🖼 İlaç Görseli -->
+        <ImageView
+            android:id="@+id/imgMedication"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="İlaç Görseli"
+            android:src="@drawable/paroltest" />
+
+        <!-- 💊 İlaç Adı -->
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
@@ -18,6 +30,7 @@
             android:textStyle="bold"
             android:paddingBottom="8dp"/>
 
+        <!-- 📄 Açıklama -->
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="wrap_content"
@@ -26,6 +39,7 @@
             android:textSize="16sp"
             android:paddingBottom="8dp"/>
 
+        <!-- 💧 Dozaj -->
         <TextView
             android:id="@+id/tvDosage"
             android:layout_width="wrap_content"
@@ -34,6 +48,7 @@
             android:textSize="16sp"
             android:paddingBottom="8dp"/>
 
+        <!-- ⚠️ Yan Etkiler -->
         <TextView
             android:id="@+id/tvSideEffects"
             android:layout_width="wrap_content"

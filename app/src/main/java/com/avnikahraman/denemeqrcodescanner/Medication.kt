@@ -5,5 +5,7 @@ data class Medication(
     val name: String = "",
     val description: String = "",
     val dosage: String = "",
-    val sideEffects: String = ""
+    val sideEffects: String = "",
+    val imageUrl: String = ""
+
 )
