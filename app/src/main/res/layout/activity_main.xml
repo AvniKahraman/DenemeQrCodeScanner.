@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
     <TextView
         android:id="@+id/scannedValue"
         android:layout_width="242dp"
@@ -19,44 +21,32 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
-
+        app:layout_constraintVertical_bias="0.261" />
 
     <Button
         android:id="@+id/btnMyMeds"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:text="Benim İlaçlarım"
+        android:layout_width="172dp"
+        android:layout_height="48dp"
+        android:text="Drugs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
-
-    <Button
-        android:id="@+id/btnAllMeds"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:text="Tüm İlaçlar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintVertical_bias="0.959" />
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="95dp"
-        android:layout_height="43dp"
+        android:layout_width="86dp"
+        android:layout_height="46dp"
         android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.065"
+        android:theme="@style/Theme.Material3.DynamicColors.Dark"/>
 
     <Button
         android:id="@+id/scanQR"
@@ -68,10 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scannedValue"
-        app:layout_constraintVertical_bias="0.223" />
-
-
-
+        app:layout_constraintVertical_bias="0.202" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

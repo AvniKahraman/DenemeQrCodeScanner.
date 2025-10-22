@@ -49,15 +49,20 @@ class MainActivity : AppCompatActivity() {
 
         // İlaç listesi butonları
         val btnMyMeds = findViewById<Button>(R.id.btnMyMeds)
-        val btnAllMeds = findViewById<Button>(R.id.btnAllMeds)
+
+        //tüm ilaçların buton tanımlama kodları
+        //val btnAllMeds = findViewById<Button>(R.id.btnAllMeds)
 
         btnMyMeds.setOnClickListener {
             startActivity(Intent(this, MyMedicationActivity::class.java))
         }
 
-        btnAllMeds.setOnClickListener {
+        //Tüm ilaçların intent kodları
+
+        /*btnAllMeds.setOnClickListener {
             startActivity(Intent(this, MedicationListActivity::class.java))
         }
+        */
 
         // Çıkış butonu
         val btnLogout = findViewById<Button>(R.id.btnLogout)

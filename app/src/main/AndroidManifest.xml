@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DenemeQrCodeScanner"
         tools:targetApi="31">
+
         <activity
             android:name=".MyMedicationActivity"
             android:exported="false"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
