@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.avnikahraman.denemeqrcodescanner.MedicationAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MedicationListActivity : AppCompatActivity() {

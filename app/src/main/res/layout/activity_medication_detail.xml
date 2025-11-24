@@ -4,11 +4,13 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_marginTop="100dp">
 
         <!-- 🖼 İlaç Görseli -->
         <ImageView
@@ -26,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="İlaç Adı"
-            android:textSize="20sp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:paddingBottom="8dp"/>
 
@@ -36,8 +38,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Açıklama"
-            android:textSize="16sp"
-            android:paddingBottom="8dp"/>
+            android:textSize="30dp"
+            android:paddingBottom="8dp"
+            android:textStyle="bold"/>
 
         <!-- 💧 Dozaj -->
         <TextView
@@ -45,7 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dozaj"
-            android:textSize="16sp"
+            android:textSize="30dp"
+            android:textStyle="bold"
             android:paddingBottom="8dp"/>
 
         <!-- ⚠️ Yan Etkiler -->
@@ -54,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yan Etkiler"
-            android:textSize="16sp"/>
+            android:textSize="30dp"
+            android:textStyle="bold"/>
     </LinearLayout>
 </ScrollView>

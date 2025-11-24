@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanner
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
@@ -48,11 +49,22 @@ class MainActivity : AppCompatActivity() {
 
         // İlaç listesi butonları
         val btnMyMeds = findViewById<Button>(R.id.btnMyMeds)
+
+        //tüm ilaçların buton tanımlama kodları
+        //val btnAllMeds = findViewById<Button>(R.id.btnAllMeds)
+
         btnMyMeds.setOnClickListener {
             startActivity(Intent(this, MyMedicationActivity::class.java))
         }
 
-        // Çıkış
+        //Tüm ilaçların intent kodları
+
+        /*btnAllMeds.setOnClickListener {
+            startActivity(Intent(this, MedicationListActivity::class.java))
+        }
+        */
+
+        // Çıkış butonu
         val btnLogout = findViewById<Button>(R.id.btnLogout)
         btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
@@ -80,14 +92,40 @@ class MainActivity : AppCompatActivity() {
     private fun askToAddMedication(medicationName: String) {
         AlertDialog.Builder(this)
             .setTitle("İlaç Ekleme")
-            .setMessage("“$medicationName” ilacını eklemek ister misiniz?")
+            .setMessage("“$medicationName” ilacını ilaçlarınıza eklemek ister misiniz?")
             .setPositiveButton("Evet") { _: DialogInterface, _: Int ->
-                // Kullanıcı “Evet” derse alarm ekranına yönlendir
-                val intent = Intent(this, AddAlarmActivity::class.java)
-                intent.putExtra("medName", medicationName)
-                startActivity(intent)
+                addMedicationToUser(medicationName)
             }
             .setNegativeButton("Hayır", null)
             .show()
+    }
+
+    private fun addMedicationToUser(medicationName: String) {
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        val db = FirebaseFirestore.getInstance()
+
+        // Tüm ilaçlar koleksiyonundan arıyoruz
+        db.collection("medications")
+            .whereEqualTo("name", medicationName.lowercase())
+            .get()
+            .addOnSuccessListener { result ->
+                if (!result.isEmpty) {
+                    val medDoc = result.documents[0]
+
+                    // Kullanıcının myMeds koleksiyonuna ekle
+                    db.collection("users").document(uid)
+                        .collection("myMeds")
+                        .document(medDoc.id)
+                        .set(medDoc.data!!)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "İlaç eklendi!", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(this, "Hata: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(this, "İlaç bulunamadı!", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }
